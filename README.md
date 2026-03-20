@@ -15,8 +15,8 @@ graph TD
     A[API Banco Central] -->|Ingestão Python| B(Bronze: Dados Brutos + Metadados)
     B -->|PySpark: Tipagem & Deduplicação| C(Silver: Dados Limpos Parquet)
     C -->|dbt: Modelagem Analítica| D(Gold: Marts & Métricas)
-    D -->|DuckDB Engine|
-    E -->[Dashboard / BI / Modelo de ML]
+    D -->|DuckDB Engine| E[Dashboard de BI]
+
 🗂️ A Jornada do Dado (Medallion)
 🥉 Bronze: Ingestão raw com controle de metadados (ts_load_bronze, source). Os dados são persistidos exatamente como chegam da API, garantindo reprocessamento sem necessidade de novas requisições externas.
 
