@@ -15,7 +15,8 @@ graph TD
     A[API Banco Central] -->|Ingestão Python| B(Bronze: Dados Brutos + Metadados)
     B -->|PySpark: Tipagem & Deduplicação| C(Silver: Dados Limpos Parquet)
     C -->|dbt: Modelagem Analítica| D(Gold: Marts & Métricas)
-    D -->|DuckDB Engine| E[Consumo / BI]
+    D -->|DuckDB Engine|
+    E -->[Dashboard / BI / Modelo de ML]
 🗂️ A Jornada do Dado (Medallion)
 🥉 Bronze: Ingestão raw com controle de metadados (ts_load_bronze, source). Os dados são persistidos exatamente como chegam da API, garantindo reprocessamento sem necessidade de novas requisições externas.
 
@@ -49,6 +50,7 @@ Bash
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+
 2. Execute o Pipeline:
 Você pode rodar por etapas ou o fluxo completo:
 
@@ -61,6 +63,7 @@ make run_dbt
 
 # Executa o pipeline End-to-End
 make run_all
+
 🗺️ Roadmap e Próximos Passos
 Esta arquitetura foi desenhada para ser facilmente portada para a Cloud. As próximas evoluções incluem:
 
@@ -71,3 +74,5 @@ Esta arquitetura foi desenhada para ser facilmente portada para a Cloud. As pró
 [ ] Cloud Migration: Portar o storage para AWS S3 e o catálogo de dados para o AWS Glue/Athena.
 
 [ ] Data Quality: Implementação de testes genéricos e singulares no dbt (not_null, unique, accepted_values).
+
+## Desenvolvido por Augusto Vieira Lead Data Engineer | MLOps | Analytics. ##
