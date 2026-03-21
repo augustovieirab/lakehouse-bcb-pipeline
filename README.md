@@ -75,4 +75,4 @@ Esta arquitetura foi desenhada para ser facilmente portada para a Cloud. As pró
 
 [ ] Data Quality: Implementação de testes genéricos e singulares no dbt (not_null, unique, accepted_values).
 
-## Desenvolvido por Augusto Vieira Lead Data Engineer | MLOps | Analytics. ##
+"Desenvolvido por Augusto Vieira — Data Engineer | PySpark · dbt · Lakehouse"
