@@ -16,6 +16,7 @@ graph TD
     B -->|PySpark: Tipagem & Deduplicação| C(Silver: Dados Limpos Parquet)
     C -->|dbt: Modelagem Analítica| D(Gold: Marts & Métricas)
     D -->|DuckDB Engine| E[Dashboard de BI]
+```
 
 🗂️ A Jornada do Dado (Medallion)
 🥉 Bronze: Ingestão raw com controle de metadados (ts_load_bronze, source). Os dados são persistidos exatamente como chegam da API, garantindo reprocessamento sem necessidade de novas requisições externas.
